@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- REMOVE this line when the site is final, so Google can show it -->
+<title>Message — TROVÉ MEDIA</title>
+<style>
+@font-face{font-family:Newsreader;src:url(fonts/newsreader.woff) format('woff');font-weight:200 800;font-display:swap}
+@font-face{font-family:Geist;src:url(fonts/geist.woff) format('woff');font-weight:100 900;font-display:swap}
+:root{--ink:#F5F5F5;--sub:#A8A8A8;--sep:#262626;--btn:#363636;--gold:#C9A04B}
+*{box-sizing:border-box}
+html,body{margin:0;background:#000;color:var(--ink);height:100%}
+body{font-family:Geist,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:18px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.top{border-bottom:1px solid var(--sep)}
+.top .in{max-width:975px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.top .lg{display:flex;align-items:center;gap:8px}.top .lg img{height:30px}
+.top .lg span{font-size:10px;font-weight:600;letter-spacing:.4em;color:var(--gold)}
+.top .back{font-weight:600;padding:8px 12px;border-radius:8px}.top .back:hover{background:#262626}
+.wrap{max-width:935px;margin:20px auto;border:1px solid var(--sep);border-radius:4px;display:grid;grid-template-columns:350px 1fr;height:calc(100vh - 100px);min-height:560px}
+.list{border-right:1px solid var(--sep);display:flex;flex-direction:column}
+.list .h{height:60px;display:flex;align-items:center;padding:0 20px;font-weight:600;font-size:16px;border-bottom:1px solid var(--sep)}
+.item{display:flex;align-items:center;gap:12px;padding:12px 20px;background:#121212}
+.av{width:56px;height:56px;border-radius:50%;border:2px solid var(--gold);background:#000;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.av img{width:70%}
+.item b{display:block;font-weight:600}.item small{color:var(--sub)}
+.info{padding:20px;color:var(--sub);font-size:13px;line-height:19px;border-top:1px solid var(--sep);margin-top:auto}
+.info a{color:var(--ink);font-weight:600}
+.chat{display:flex;flex-direction:column;min-height:0}
+.chat .h{height:60px;display:flex;align-items:center;gap:12px;padding:0 20px;border-bottom:1px solid var(--sep)}
+.chat .h .av{width:32px;height:32px;border-width:1px}
+.chat .h b{font-weight:600;font-size:16px}
+.log{flex:1;overflow:auto;padding:20px;display:flex;flex-direction:column;gap:6px}
+.pr{text-align:center;padding:16px 0 26px}
+.pr .av{width:96px;height:96px;margin:0 auto 12px;border-width:3px}
+.pr b{display:block;font-size:20px;line-height:26px;font-weight:600}
+.pr small{display:block;color:var(--sub);margin:4px 0 14px}
+.pr a{display:inline-block;background:var(--btn);padding:7px 16px;border-radius:8px;font-weight:600}
+.m{max-width:70%;padding:9px 13px;border-radius:22px;font-size:15px;line-height:20px;animation:mi .25s ease;word-wrap:break-word}
+@keyframes mi{from{opacity:0;transform:translateY(5px)}}
+.m.t{align-self:flex-start;background:#262626}
+.m.u{align-self:flex-end;background:var(--gold);color:#000}
+.dots{align-self:flex-start;background:#262626;border-radius:22px;padding:12px 14px;display:flex;gap:4px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--sub);animation:d 1s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes d{30%{opacity:1;transform:translateY(-2px)}0%,60%,100%{opacity:.35}}
+.opts{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;margin:4px 0}
+.opts button{background:transparent;border:1px solid var(--sep);color:var(--ink);border-radius:22px;padding:9px 15px;font:600 14px Geist,sans-serif;cursor:pointer;min-height:40px}
+.opts button:hover{border-color:var(--gold);color:var(--gold)}
+.send{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin-top:6px}
+.b{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:8px;font-weight:600;background:var(--btn)}
+.b.p{background:var(--gold);color:#000}
+.copied{align-self:flex-end;color:var(--gold);font-size:12px}
+.seen{align-self:flex-end;color:var(--sub);font-size:12px;margin-top:2px}
+.bar{margin:14px 16px 16px;border:1px solid var(--sep);border-radius:22px;display:flex;align-items:center;padding:0 6px 0 16px;min-height:44px}
+.bar input{flex:1;background:transparent;border:0;outline:none;color:var(--ink);font:15px Geist,sans-serif;min-height:42px}
+.bar button{background:none;border:0;color:var(--gold);font:600 14px Geist,sans-serif;padding:8px 10px;cursor:pointer}
+.bar button:disabled{color:#555;cursor:default}
+@media(max-width:735px){.wrap{grid-template-columns:1fr;margin:0;border:0;border-radius:0;height:calc(100vh - 61px)}.list{display:none}.m{max-width:82%}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><a class="lg" href="index.html"><img src="logo-nav.png" alt="TROVÉ MEDIA"></a><a class="back" href="index.html">← Profile</a></div></header>
+<div class="wrap">
+  <aside class="list"><div class="h">Messages</div><div class="item"><span class="av"><img src="logo-nav.png" alt=""></span><div><b>TROVÉ MEDIA</b><small>Usually a few quick taps</small></div></div>
+    <div class="info">Prefer Instagram? Find us at <a href="https://instagram.com/trovemedia.official">@trovemedia.official</a>.<br><br>Brands: social media and creator collaborations. New brands: brand strategy and launch. Creators: talent management and brand deals.</div></aside>
+  <section class="chat"><div class="h"><span class="av"><img src="logo-nav.png" alt=""></span><b>trovemedia.official</b></div>
+    <div class="log" id="log"><div class="pr"><span class="av"><img src="logo-nav.png" alt=""></span><b>TROVÉ MEDIA</b><small>trovemedia.official · Digital marketing agency</small><a href="index.html">View profile</a></div></div>
+    <form class="bar" id="f" onsubmit="return false"><input id="inp" placeholder="Message…" autocomplete="off" aria-label="Message" disabled><button id="sb" type="submit" disabled>Send</button></form>
+  </section>
+</div>
+<script>
+(function(){
+  // >>> Set these before going live <<<
+  var WHATSAPP='917045944509';          // WhatsApp number with country code, no + or spaces
+  var EMAIL='godanitanish08@gmail.com';     // enquiry email
+  var IG='trovemedia.official';         // Instagram username for DMs
+  var log=document.getElementById('log'),inp=document.getElementById('inp'),sb=document.getElementById('sb'),d={},w=null;
+  function scroll(){log.scrollTop=log.scrollHeight;}
+  function msg(t,c){var m=document.createElement('div');m.className='m '+c;m.textContent=t;log.appendChild(m);scroll();}
+  function typing(cb,ms){var t=document.createElement('div');t.className='dots';t.innerHTML='<i></i><i></i><i></i>';log.appendChild(t);scroll();setTimeout(function(){t.remove();cb();},ms||650);}
+  function say(lines,cb){var i=0;(function nx(){if(i>=lines.length){cb&&cb();return;}typing(function(){msg(lines[i++],'t');nx();});})();}
+  function opts(a,cb){var o=document.createElement('div');o.className='opts';a.forEach(function(x){var b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=function(){o.remove();msg(x,'u');cb(x);};o.appendChild(b);});log.appendChild(o);scroll();}
+  function ask(q,ph,k,n){say([q],function(){w={k:k,n:n};inp.placeholder=ph;inp.disabled=false;inp.focus();});}
+  inp.addEventListener('input',function(){sb.disabled=!inp.value.trim();});
+  document.getElementById('f').addEventListener('submit',function(){var v=inp.value.trim();if(!v||!w)return;msg(v,'u');d[w.k]=v;inp.value='';inp.placeholder='Message…';sb.disabled=true;inp.disabled=true;var n=w.n;w=null;n();});
+
+  function finish(summary,lead){
+    say([lead,'Where should we continue? Pick one and the message is already written for you.'],function(){
+      opts(['WhatsApp','Email','Instagram DM'],function(ch){
+        var tx=encodeURIComponent(summary),a;
+        if(ch==='WhatsApp'){a='<a class="b p" target="_blank" rel="noopener" href="https://wa.me/'+WHATSAPP+'?text='+tx+'">Open WhatsApp →</a>';}
+        else if(ch==='Email'){a='<a class="b p" href="mailto:'+EMAIL+'?subject='+encodeURIComponent('Enquiry: '+(d.brand||'TROVÉ MEDIA'))+'&body='+tx+'">Open email →</a>';}
+        else {a='<a class="b p" id="igb" target="_blank" rel="noopener" href="https://ig.me/m/'+IG+'">Copy message &amp; open Instagram →</a>';}
+        say([ch==='WhatsApp'?'Perfect. Tap below and just hit send. Your number comes through with it, nothing to type.':ch==='Email'?'Perfect. Tap below and just hit send.':'Perfect. We\'ll copy the message for you. Paste it in our DMs.'],function(){
+          var s=document.createElement('div');s.className='send';s.innerHTML=a;log.appendChild(s);
+          var ig=document.getElementById('igb');if(ig)ig.addEventListener('click',function(){try{navigator.clipboard.writeText(summary);}catch(e){}var c=document.createElement('div');c.className='copied';c.textContent='Copied ✓';log.appendChild(c);scroll();});
+          var se=document.createElement('div');se.className='seen';se.textContent='Seen';log.appendChild(se);scroll();
+        });
+      });
+    });
+  }
+
+  say(['Hey! Welcome to TROVÉ MEDIA.','Who are we talking to?'],function(){
+    opts(['A brand','Starting a brand','A creator'],function(t){
+      if(t==='A brand'){
+        say(['Love that. What do you need most?'],function(){
+          opts(['Social media management','Creator collaborations','Both'],function(n){d.need=n;
+            say(['And when would you like to start?'],function(){
+              opts(['Right away','Next month','Just exploring'],function(wh){d.when=wh;
+                ask('Last one. What\'s the brand called?','Brand name or @handle','brand',function(){
+                  finish('Hi TROVÉ MEDIA, this is '+d.brand+'. We\'re looking for '+d.need.toLowerCase()+' and would like to start '+(wh==='Just exploring'?'soon (just exploring for now)':wh.toLowerCase())+'. Can we talk?','Great, '+d.brand+'. That\'s all we need for now.');
+                });});});});});
+      } else if(t==='Starting a brand'){
+        say(['Exciting. Where are you right now?'],function(){
+          opts(['Just an idea','Launching soon','Recently launched'],function(stg){d.stage=stg;
+            say(['What will you be selling?'],function(){
+              opts(['Fashion','Beauty & skincare','Food & drinks','Something else'],function(cat){d.cat=cat;
+                ask('What\'s it called? A working name is fine.','Brand or working name','brand',function(){
+                  finish('Hi TROVÉ MEDIA, I\'m starting '+d.brand+' ('+cat.toLowerCase()+'). We\'re at the "'+stg.toLowerCase()+'" stage and need help with brand strategy and the launch. Can we talk?','Love it. '+d.brand+' is in good hands.');
+                });});});});});
+      } else {
+        say(['Nice. What do you create?'],function(){
+          opts(['Fashion','Lifestyle','Beauty & skincare','Food','Something else'],function(c){d.cat=c;
+            ask('Drop your Instagram handle.','@yourhandle','brand',function(){
+              finish('Hi TROVÉ MEDIA, I\'m '+d.brand+', a '+c.toLowerCase()+' creator. I\'d like to talk about talent management and brand deals.','Got it. We\'ll take a look at '+d.brand+'.');
+            });});});
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

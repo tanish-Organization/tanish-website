@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- REMOVE this line when the site is final, so Google can show it -->
+<title>TROVÉ MEDIA (@trovemedia.official) — Digital marketing agency</title>
+<meta name="description" content="TROVÉ MEDIA is a digital marketing agency in India: social media management, creator collaborations, talent management and brand strategy.">
+<style>
+@font-face{font-family:Newsreader;src:url(fonts/newsreader.woff) format('woff');font-weight:200 800;font-display:swap}
+@font-face{font-family:Newsreader;src:url(fonts/newsreader-italic.woff) format('woff');font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:Geist;src:url(fonts/geist.woff) format('woff');font-weight:100 900;font-display:swap}
+:root{--bg:#000;--ink:#F5F5F5;--sub:#A8A8A8;--sep:#262626;--btn:#363636;--btnh:#262626;--gold:#C9A04B;--card:#0C0B0A;--green:#3DBE6A}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:Geist,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:18px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+svg{display:block}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:30;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--sep)}
+.top .in{max-width:975px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.top .lg{display:flex;align-items:center;gap:8px}
+.top .lg img{height:30px}
+.top .lg span{font-size:10px;font-weight:600;letter-spacing:.4em;color:var(--gold)}
+.top nav{display:flex;gap:6px}
+.top nav a{padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px}
+.top nav a:hover{background:var(--btnh)}
+
+
+/* ---------- profile ---------- */
+main{max-width:975px;margin:0 auto;padding:30px 20px 0}
+.prof{display:grid;grid-template-columns:290px 1fr;margin-bottom:44px}
+.av{justify-self:center;width:168px;height:168px;border-radius:50%;padding:4px;background:var(--gold);cursor:pointer;border:0}
+.av span{display:flex;width:100%;height:100%;border-radius:50%;background:#000;border:4px solid #000;align-items:center;justify-content:center}
+.av img{width:74%}
+.info{display:flex;flex-direction:column;gap:20px;padding-top:6px}
+.r1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.handle{font-size:20px;line-height:25px;font-weight:400;margin:0 12px 0 0}
+.tick{width:18px;height:18px;margin-left:-8px;margin-right:12px;color:var(--gold)}
+.b{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 16px;border-radius:8px;font-weight:600;font-size:14px;background:var(--btn);color:var(--ink);border:0;cursor:pointer}
+.b:hover{background:var(--btnh)}
+.b.p{background:var(--gold);color:#000}
+.b.p:hover{background:#d8b260}
+.stats{display:flex;gap:40px;font-size:16px;margin:0;padding:0;list-style:none}
+.stats b{font-weight:600}
+.bio{font-size:14px;line-height:20px}
+.bio .nm{font-weight:600;display:block}
+.bio .cat{color:var(--sub);display:block}
+.bio .lk{color:#E0C27E;font-weight:600}
+
+/* highlights */
+.hls{display:flex;gap:44px;padding:0 0 0 40px;margin-bottom:44px;overflow-x:auto;scrollbar-width:none}
+.hls::-webkit-scrollbar{display:none}
+.hl{display:flex;flex-direction:column;align-items:center;gap:14px;background:none;border:0;color:var(--ink);cursor:pointer;padding:0;flex:0 0 auto}
+.hl .ring{width:87px;height:87px;border-radius:50%;padding:3px;background:var(--sep)}
+.hl.cf .ring{background:var(--green)}
+.hl .ring span{display:flex;width:100%;height:100%;border-radius:50%;background:#121212;border:3px solid #000;align-items:center;justify-content:center;font-family:Newsreader,serif;font-size:26px;color:var(--gold)}
+.hl.cf .ring span{color:var(--green)}
+.hl small{font-size:12px;font-weight:600;line-height:16px}
+
+/* tabs */
+.tabs{display:flex;justify-content:center;gap:60px;border-top:1px solid var(--sep)}
+.tab{display:flex;align-items:center;gap:6px;height:52px;background:none;border:0;border-top:1px solid transparent;margin-top:-1px;color:var(--sub);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.tab svg{width:12px;height:12px}
+.tab.on{color:var(--ink);border-top-color:var(--ink)}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding-bottom:60px}
+.grid.hide{display:none}
+.tile{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer;background:var(--card);border:0;padding:0;color:var(--ink);text-align:left}
+.grid.reels .tile{aspect-ratio:9/16}
+.tile .ov{position:absolute;inset:0;background:rgba(0,0,0,.35);opacity:0;transition:opacity .15s;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;gap:6px}
+.tile:hover .ov{opacity:1}
+.tile .ic{position:absolute;top:10px;right:10px;width:18px;height:18px;color:#fff;opacity:.9}
+
+/* post art (shared by tiles and modal) */
+.art{position:absolute;inset:0;padding:9% 9% 8%;display:flex;flex-direction:column;container-type:inline-size}
+.art .k{font-size:3.6cqw;font-weight:600;letter-spacing:.18em;text-transform:uppercase;opacity:.65}
+.art .h{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:13cqw;line-height:.98;letter-spacing:-.02em;margin-top:auto}
+.art .h em{color:var(--gold)}
+.art .s{font-size:4.2cqw;line-height:1.45;margin-top:5cqw;opacity:.8}
+.art .f{display:flex;justify-content:space-between;align-items:center;margin-top:7cqw;padding-top:4cqw;border-top:1px solid rgba(245,245,245,.18);font-size:3.2cqw;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.art .f img{height:5.4cqw}
+.art.gold{background:var(--gold);color:#0B0A09}
+.art.gold .h em{color:#fff}
+.art.gold .f{border-color:rgba(11,10,9,.25)}
+.art.gold .f img{filter:brightness(0)}
+.art.cream{background:#EFE7D6;color:#0B0A09}
+.art.cream .h em{color:#9C7A30}
+.art.cream .f{border-color:rgba(11,10,9,.2)}
+.art.cream .f img{filter:brightness(0)}
+.art.logo{align-items:center;justify-content:center}
+.art.logo img.big{width:86%}
+.art.logo .s{text-align:center;color:var(--gold);letter-spacing:.4em;font-size:3.4cqw;text-transform:uppercase;opacity:1;margin-top:6cqw}
+.art .list{margin-top:5cqw;font-size:4.2cqw;line-height:1.5}
+.art .list div{padding:1.6cqw 0;border-top:1px solid rgba(245,245,245,.14)}
+.art.gold .list div{border-color:rgba(11,10,9,.2)}
+.art .num{font-family:Newsreader,serif;font-size:30cqw;line-height:.8;color:var(--gold);margin-top:auto}
+
+/* ---------- modal (post view) ---------- */
+.md{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:40px 70px}
+.md.on{display:flex}
+.md .x{position:fixed;top:14px;right:18px;background:none;border:0;color:#fff;font-size:30px;width:44px;height:44px;cursor:pointer}
+.md .nv{position:fixed;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);color:#000;border:0;cursor:pointer;font-size:18px;line-height:1}
+.md .nv.l{left:20px}.md .nv.r{right:20px}
+.box{display:grid;grid-template-columns:auto 405px;grid-template-rows:auto 1fr;max-height:calc(100vh - 80px);background:#000;border-radius:4px;overflow:hidden}
+.box>.hd{grid-column:2;grid-row:1;border-left:1px solid var(--sep)}
+.box>.pic{grid-column:1;grid-row:1/3}
+.box>.side{grid-column:2;grid-row:2}
+.pic{overflow:hidden;touch-action:pan-y}
+.mbar{display:none}
+.act{display:flex;gap:14px;padding:10px 16px 4px;border-top:1px solid var(--sep)}
+.act button,.act a{background:none;border:0;padding:0;color:var(--ink);cursor:pointer}
+.act svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+#lkb.on svg{fill:#ED4956;stroke:#ED4956;animation:pop .35s}
+@keyframes pop{50%{transform:scale(1.25)}}
+.lkl{padding:2px 16px 8px;font-size:14px;font-weight:600}
+.lkl.n{font-weight:400;color:var(--sub)}
+.emo{display:flex;justify-content:space-between;padding:4px 16px 2px}
+.emo button{background:none;border:0;font-size:22px;padding:4px;cursor:pointer;line-height:1;transition:transform .15s}
+.emo button:active{transform:scale(1.3)}
+.cmt{display:flex;align-items:center;gap:8px;padding:8px 16px 10px}
+.cmt input{flex:1;min-width:0;background:none;border:0;color:var(--ink);font:400 14px Geist,sans-serif;outline:none;padding:6px 0}
+.cmt input::placeholder{color:var(--sub)}
+.cmt button{background:none;border:0;color:var(--gold);font:600 14px Geist,sans-serif;cursor:pointer;opacity:.4;pointer-events:none}
+.cmt.ok button{opacity:1;pointer-events:auto}
+.cm{display:flex;gap:12px;margin-top:14px;animation:cin .3s}
+@keyframes cin{from{opacity:0;transform:translateY(6px)}}
+.cm .ua{width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:#262626;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13px;font-weight:600}
+.cm .tm{color:var(--sub);font-size:12px;margin-top:4px}
+.cm .tm button{background:none;border:0;color:var(--sub);font:600 12px Geist,sans-serif;padding:0;margin-left:12px;cursor:pointer}
+.bigh{position:absolute;left:50%;top:50%;width:26%;transform:translate(-50%,-50%) scale(0);z-index:6;pointer-events:none;fill:#fff;filter:drop-shadow(0 4px 18px rgba(0,0,0,.45))}
+.bigh.go{animation:bh .9s ease forwards}
+@keyframes bh{15%{transform:translate(-50%,-50%) scale(1.15);opacity:1}30%{transform:translate(-50%,-50%) scale(.95)}45%,75%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
+.box .pic{position:relative;height:min(calc(100vh - 80px),780px);aspect-ratio:4/5;background:var(--card)}
+.box .pic.r{aspect-ratio:9/16}
+.box .side{display:flex;flex-direction:column;border-left:1px solid var(--sep);min-height:0}
+.box .hd{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--sep);font-weight:600}
+.mini{width:32px;height:32px;border-radius:50%;background:#000;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;flex:0 0 32px}
+.mini img{width:72%}
+.box .cap{padding:16px;overflow:auto;flex:1;font-size:14px;line-height:21px}
+.box .cap .row{display:flex;gap:14px}
+.box .cap b{font-weight:600}
+.box .cap p{margin:0 0 12px}
+.box .cap ul{margin:6px 0 14px;padding-left:18px}
+.box .cap li{margin:4px 0}
+.box .cap .tm{color:var(--sub);font-size:12px;margin-top:6px}
+.box .ft{border-top:1px solid var(--sep);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.box .ft .sub{color:var(--sub);font-size:12px}
+
+/* ---------- story viewer ---------- */
+.sv{position:fixed;inset:0;z-index:70;background:#111;display:none;align-items:center;justify-content:center}
+.sv.on{display:flex}
+.st{position:relative;height:min(92vh,880px);aspect-ratio:9/16;background:var(--card);border-radius:8px;overflow:hidden;user-select:none}
+.st .bars{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:3px;z-index:5}
+.st .bars i{flex:1;height:2px;background:rgba(255,255,255,.35);border-radius:1px;overflow:hidden}
+.st .bars i b{display:block;height:100%;width:0;background:#fff}
+.st .sh{position:absolute;top:22px;left:12px;right:12px;display:flex;align-items:center;gap:10px;z-index:5;font-weight:600}
+.st .sh .t{color:var(--sub);font-weight:400}
+.st .sh .cfb{background:var(--green);color:#03140a;font-size:11px;font-weight:700;padding:2px 6px;border-radius:4px}
+.st .sh .xx{margin-left:auto;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;width:40px;height:40px}
+.st .body{position:absolute;inset:0;padding:96px 26px 40px;display:flex;flex-direction:column;justify-content:center}
+.st .body .k{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.st .body .h{font-family:Newsreader,serif;font-size:clamp(34px,5vh,50px);line-height:1;letter-spacing:-.02em;margin:0 0 16px}
+.st .body .h em{color:var(--gold)}
+.st .body p{color:#cfc8b8;font-size:15px;line-height:1.55;margin:0}
+.st .body ul{list-style:none;margin:6px 0 0;padding:0}
+.st .body li{padding:10px 0;border-top:1px solid #262626;font-size:15px}
+.st .body .go{margin-top:22px;align-self:flex-start;position:relative;z-index:6}
+.st .tap{position:absolute;top:80px;bottom:0;z-index:4;cursor:pointer}
+.st .tap.l{left:0;width:35%}.st .tap.r{right:0;width:65%}
+.sv .ar{background:none;border:0;color:#fff;font-size:28px;width:52px;height:52px;cursor:pointer;opacity:.7}
+.sv .ar:hover{opacity:1}
+
+footer{border-top:1px solid var(--sep);padding:24px 20px 40px;text-align:center;color:var(--sub);font-size:12px;line-height:20px}
+footer a{margin:0 8px}
+
+/* ---------- mobile (true profile layout) ---------- */
+@media(max-width:735px){
+  .top nav a:not(.p){display:none}
+  main{padding:16px 0 0}
+  .prof{grid-template-columns:86px 1fr;gap:0 24px;padding:0 16px;margin-bottom:20px}
+  .av{width:86px;height:86px;padding:3px;align-self:start}
+  .av span{border-width:3px}
+  .info{gap:12px;padding-top:4px}
+  .handle{display:none}
+  .tick{display:none}
+  .mname{display:block!important;font-weight:600;font-size:15px}
+  .stats{display:grid!important;grid-template-columns:repeat(3,1fr);gap:0!important;text-align:left}
+  .stats li{display:flex;flex-direction:column;font-size:13px;line-height:16px;color:var(--ink)}
+  .stats b{font-size:17px;line-height:22px}
+  .top .in{height:52px;padding:0 16px}
+  .top .lg{display:none}
+  .mh{display:flex!important;align-items:center;gap:6px;font-weight:700;font-size:18px}
+  .mh svg{width:16px;height:16px;color:var(--gold)}
+  .info{justify-content:center}
+  .bio .nm{display:none}
+  .r1 .b{display:none}
+  .bio{grid-column:1/-1;margin-top:14px}
+  .mbtns{display:grid!important;grid-template-columns:1fr 1fr;gap:6px;padding:0 16px;margin-bottom:20px}
+  .hls{gap:16px;padding:0 16px;margin-bottom:12px}
+  .hl .ring{width:66px;height:66px}
+  .hl .ring span{font-size:20px}
+  .tabs{gap:0;justify-content:space-around}
+  .tab span{display:none}.tab svg{width:22px;height:22px}
+  .grid{gap:2px}
+  .tile .ov{display:none}
+  .md{padding:0}
+  .md .nv{display:none}
+  .md{align-items:stretch;background:#000}
+  .md .x{display:none}
+  .mbar{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;position:fixed;top:0;left:0;right:0;height:48px;background:#000;border-bottom:1px solid var(--sep);z-index:5;text-align:center;font-size:16px}
+  .mbar button{background:none;border:0;color:var(--ink);width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+  .mbar svg{width:24px;height:24px}
+  .box{display:block;max-height:none;height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;border-radius:0;width:100%;padding-top:48px}
+  .box>.hd{border-left:0;border-bottom:0;padding:10px 14px}
+  .box .pic{height:auto;width:100%}
+  .box .side{border-left:0;display:flex;flex-direction:column}
+  .box .side .cap{order:3;padding:2px 14px 6px;overflow:visible}
+  .box .side .act{order:1;border-top:0;padding:10px 14px 4px}
+  .box .side .lkl{order:2;padding:2px 14px 6px}
+  .box .side .emo{order:4;border-top:1px solid var(--sep);margin-top:8px;padding:8px 14px 0}
+  .box .side .cmt{order:5;padding:6px 14px 10px}
+  .box .side .ft{order:6;padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
+  .cmt input{font-size:16px}
+  .st{height:100%;width:100%;aspect-ratio:auto;border-radius:0}
+  .sv .ar{display:none}
+}
+.mbtns{display:none}
+.mname,.mh{display:none}
+
+.b.o{background:transparent;border:1px solid #4a4235;gap:8px}
+.b.o:hover{border-color:var(--gold);color:var(--gold);background:transparent}
+.b.o svg{width:16px;height:16px}
+/* tile badges */
+.tile .badge{position:absolute;top:10px;right:10px;width:20px;height:20px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
+.art.lockd .blur{filter:blur(7px);opacity:.7}
+/* modal interactive */
+.pic .track{display:flex;height:100%;transition:transform .5s cubic-bezier(.6,0,.2,1)}
+.pic .sl{position:relative;flex:0 0 100%;height:100%}
+.pic .pdots{position:absolute;bottom:14px;left:0;right:0;display:flex;gap:5px;justify-content:center;z-index:4}
+.pic .pdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35)}
+.pic .pdots i.on{background:#fff}
+.pic .pa{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.85);color:#000;border:0;cursor:pointer;z-index:4;font-size:16px;line-height:1}
+.pic .pa.l{left:10px}.pic .pa.r{right:10px}
+.opt{display:block;width:100%;text-align:left;margin-top:2.4cqw;padding:3.2cqw 4cqw;border:1px solid rgba(245,245,245,.25);border-radius:2cqw;background:transparent;color:inherit;font:500 4.4cqw Geist,sans-serif;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s}
+.opt:hover{border-color:var(--gold)}
+.opt.pick{border-color:var(--gold);background:rgba(201,160,75,.16)}
+.pollres{margin-top:4cqw;font-size:4.2cqw;line-height:1.5;color:#E0C27E;min-height:12cqw}
+.pollres a{display:inline-block;margin-top:2cqw;color:#000;background:var(--gold);padding:2cqw 4cqw;border-radius:1.6cqw;font-weight:600}
+.holdbtn{margin-top:auto;align-self:center;width:30cqw;height:30cqw;border-radius:50%;border:1px solid rgba(245,245,245,.3);background:transparent;color:var(--ink);font:600 3.6cqw Geist,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;position:relative;user-select:none;-webkit-user-select:none;touch-action:none}
+.holdbtn svg{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);transform:rotate(-90deg)}
+.holdbtn circle{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:302;stroke-dashoffset:302}
+.revealed{display:none}
+.art.done .revealed{display:block}
+.art.done .holdbtn,.art.done .pre{display:none}
+.lockrow{padding:3cqw 0;border-top:1px solid rgba(245,245,245,.14);font-family:Newsreader,serif;font-size:7cqw;transition:filter .6s,opacity .6s}
+.art.lockd .lockrow{filter:blur(6px);opacity:.6}
+.unlock{margin-top:5cqw;align-self:flex-start;background:var(--green);color:#03140a;border:0;border-radius:2cqw;padding:3cqw 5cqw;font:700 4cqw Geist,sans-serif;cursor:pointer}
+.art:not(.lockd) .unlock{display:none}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:1.4cqw;margin-top:4cqw}
+.cal span{font-size:3cqw;color:var(--sub);text-align:center;padding-bottom:1cqw}
+.cal button{aspect-ratio:1;border:1px solid rgba(245,245,245,.12);border-radius:1.4cqw;background:transparent;color:var(--ink);font:500 3.2cqw Geist,sans-serif;position:relative;cursor:pointer;padding:0}
+.cal button i{position:absolute;bottom:1.2cqw;left:50%;transform:translateX(-50%);width:1.6cqw;height:1.6cqw;border-radius:50%}
+.cal button.on{border-color:var(--gold)}
+.i-r{background:var(--gold)}.i-c{background:#EFE7D6}.i-s{background:#6b6b6b}
+.legend{display:flex;gap:4cqw;margin-top:3cqw;font-size:3.2cqw;color:var(--sub)}
+.legend i{display:inline-block;width:1.8cqw;height:1.8cqw;border-radius:50%;margin-right:1.2cqw;vertical-align:middle}
+.calout{margin-top:3cqw;font-size:4cqw;min-height:6cqw;color:#E0C27E}
+.ini{font-family:Newsreader,serif;font-size:34cqw;line-height:.85;color:var(--gold);margin-top:auto}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="lg" href="index.html" aria-label="TROVÉ MEDIA"><img src="logo-nav.png" alt="TROVÉ MEDIA"></a>
+  <span class="mh">trovemedia.official<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.5l2.6 2 3.2-.3.9 3.1 2.8 1.6-1 3.1 1 3.1-2.8 1.6-.9 3.1-3.2-.3-2.6 2-2.6-2-3.2.3-.9-3.1L2.5 14l1-3.1-1-3.1 2.8-1.6.9-3.1 3.2.3z"/><path d="M8 12.2l2.6 2.6L16.2 9" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <nav><a href="#posts" data-tab="posts">Posts</a><a href="#reels" data-tab="reels">Services</a><a href="#tagged" data-tab="tagged">Clients</a></nav>
+</div></header>
+
+<main>
+  <section class="prof">
+    <button class="av" data-story="brands" aria-label="View TROVÉ MEDIA story"><span><img src="logo-nav.png" alt="TROVÉ MEDIA"></span></button>
+    <div class="info">
+      <div class="r1">
+        <h1 class="handle">trovemedia.official</h1>
+        <svg class="tick" viewBox="0 0 24 24" aria-label="Agency account"><path fill="currentColor" d="M12 1.5l2.6 2 3.2-.3.9 3.1 2.8 1.6-1 3.1 1 3.1-2.8 1.6-.9 3.1-3.2-.3-2.6 2-2.6-2-3.2.3-.9-3.1L2.5 14l1-3.1-1-3.1 2.8-1.6.9-3.1 3.2.3z"/><path d="M8 12.2l2.6 2.6L16.2 9" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a class="b p" href="contact.html">Work with us</a>
+        <a class="b o" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></svg> Message</a>
+      </div>
+      <span class="mname">TROVÉ MEDIA</span>
+      <ul class="stats"><li><b>9</b> posts</li><li><b>4</b> services</li><li><b>3</b> clients</li></ul>
+      <div class="bio">
+        <span class="nm">TROVÉ MEDIA</span>
+        <span class="cat">Digital marketing agency</span>
+        Strategy · Social media management · Creator collaborations · Talent management · Brand strategy<br>
+        We plan it, make it and manage it. For brands, new brands and creators. India.<br>
+        <a class="lk" href="contact.html">Start a project ↗</a>
+      </div>
+    </div>
+  </section>
+  <div class="mbtns"><a class="b p" href="contact.html">Work with us</a><a class="b o" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></svg> Message</a></div>
+
+  <div class="hls" aria-label="Highlights">
+    <button class="hl" data-story="brands"><span class="ring"><span>B</span></span><small>Brands</small></button>
+    <button class="hl" data-story="newbrand"><span class="ring"><span>+</span></span><small>New brand</small></button>
+    <button class="hl" data-story="creators"><span class="ring"><span>C</span></span><small>Creators</small></button>
+        <button class="hl cf" data-story="work"><span class="ring"><span>★</span></span><small>Clients</small></button>
+    <button class="hl" data-story="process"><span class="ring"><span>→</span></span><small>Process</small></button>
+  </div>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab on" data-tab="posts" role="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg><span>Posts</span></button>
+    <button class="tab" data-tab="reels" role="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 8h18M8 3l3 5M14 3l3 5M10 12v5l4.5-2.5z"/></svg><span>Services</span></button>
+    <button class="tab" data-tab="tagged" role="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v13h-5l-3 3-3-3H4z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Clients</span></button>
+  </nav>
+
+  <div class="grid" id="g-posts"></div>
+  <div class="grid reels hide" id="g-reels"></div>
+  <div class="grid hide" id="g-tagged"></div>
+</main>
+
+<footer><a href="#posts" data-tab="posts">Posts</a><a href="#reels" data-tab="reels">Services</a><a href="#tagged" data-tab="tagged">Clients</a><a href="contact.html">Contact</a><br>© 2026 TROVÉ MEDIA · Digital marketing agency · India</footer>
+
+<div class="md" id="md" role="dialog" aria-modal="true" aria-label="Post">
+  <button class="x" id="mx" aria-label="Close">×</button>
+  <button class="nv l" id="mp" aria-label="Previous post">‹</button>
+  <div class="mbar"><button id="mb" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><b>Posts</b><span></span></div>
+  <div class="box"><div class="hd"><span class="mini"><img src="logo-nav.png" alt=""></span>trovemedia.official</div><div class="pic" id="mpic"></div><div class="side"><div class="cap" id="mcap"></div>
+    <div class="act"><button id="lkb" aria-label="Like"><svg viewBox="0 0 24 24"><path d="M12 20.5s-8-4.9-8-11A4.5 4.5 0 0 1 12 6.6 4.5 4.5 0 0 1 20 9.5c0 6.1-8 11-8 11z"/></svg></button><button id="cmb" aria-label="Comment"><svg viewBox="0 0 24 24"><path d="M20.7 16.4A9 9 0 1 0 17 20l3.9 1z"/></svg></button><a href="contact.html" aria-label="Message"><svg viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></svg></a></div>
+    <div class="lkl" id="lkl"></div>
+    <div class="emo" id="emo"></div>
+    <form class="cmt" id="cmf"><input id="cmi" maxlength="200" autocomplete="off" placeholder="Add a comment…" aria-label="Add a comment"><button>Post</button></form>
+    <div class="ft"><span class="sub">TROVÉ MEDIA</span><a class="b p" href="contact.html">Work with us</a></div></div></div>
+  <button class="nv r" id="mn" aria-label="Next post">›</button>
+</div>
+
+<div class="sv" id="sv" role="dialog" aria-modal="true" aria-label="Story">
+  <button class="ar" id="sp" aria-label="Previous">‹</button>
+  <div class="st" id="st"><div class="bars" id="bars"></div><div class="sh"><span class="mini"><img src="logo-nav.png" alt=""></span>trovemedia.official<span class="t" id="stt"></span><span class="cfb" id="cfb" hidden>Close friends</span><button class="xx" id="sx" aria-label="Close">×</button></div><div class="body" id="sb"></div><div class="tap l" id="tl"></div><div class="tap r" id="tr"></div></div>
+  <button class="ar" id="sn" aria-label="Next">›</button>
+</div>
+<script>
+(function(){
+var LOGO='<img src="logo-nav.png" alt="">';
+function foot(l){return '<div class="f"><span>'+l+'</span>'+LOGO+'</div>';}
+var IC={
+ car:'<svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="13" height="13" rx="2"/><path d="M4 16V5a1 1 0 0 1 1-1h11"/></svg>',
+ poll:'<svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>',
+ eye:'<svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+ lock:'<svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
+ cal:'<svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+ reel:'<svg class="badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 9v6l5-3z" fill="currentColor"/></svg>'
+};
+/* ---------- content ---------- */
+var CLIENTS='<div class="lockrow">House of Misfit</div><div class="lockrow">3Era Media</div><div class="lockrow">Topklickz</div>';
+var POSTS=[
+ {type:'single',art:'<div class="art logo"><img class="big" src="logo-word.png" alt="TROVÉ MEDIA — Discover what works."></div>',
+  cap:'<p><b>trovemedia.official</b> Hello. We\'re TROVÉ MEDIA, a digital marketing agency in India.</p><p>We run social media for brands, help new brands find their footing, pair brands with creators who fit, and manage brand deals for creators.</p><p>Tap around. Most posts here do something.</p>'},
+ {type:'carousel',art:'<div class="art gold"><div class="k">01 · For brands</div><div class="h">Social media, run like a brand.</div><div class="s">Swipe for what a month with us looks like.</div>'+foot('Social media management')+'</div>',
+  slides:['<div class="art"><div class="k">What you get, every month</div><div class="list" style="margin-top:auto"><div>Content strategy &amp; calendar</div><div>Reels, concept and script to final cut</div><div>Carousels, statics &amp; stories</div><div>Content writing &amp; captions</div><div>Trends &amp; meme formats in your voice</div></div>'+foot('2 / 4')+'</div>',
+          '<div class="art cream"><div class="k">How a month runs</div><div class="list" style="margin-top:auto"><div><b>Week 1</b> · Plan and approve the month</div><div><b>Weeks 2–4</b> · Create, post, engage</div><div><b>Month end</b> · Review and sharpen</div></div>'+foot('3 / 4')+'</div>',
+          '<div class="art gold"><div class="k">Plans</div><div class="h">Monthly plans. <em>Three-month engagements.</em></div><div class="s">Built around your brand. Shoot days when the plan needs them.</div>'+foot('4 / 4')+'</div>'],
+  cap:'<p><b>trovemedia.official</b> Social media management. Your page, run every month with a plan behind it. Swipe through to see what a month with us looks like.</p>'},
+ {type:'poll',art:'<div class="art"><div class="k">Quick poll</div><div class="h" style="font-size:10.5cqw">What is your brand missing right now?</div><div class="s">Tap to answer.</div>'+foot('Poll')+'</div>',
+  q:'What is your brand missing right now?',opts:[['Consistency','We plan the month and post on schedule, so your page never goes quiet.'],['Content ideas','Ideas, hooks and scripts every month, in your brand\'s voice.'],['The right creators','We find creators your audience already trusts, and manage the whole collab.'],['A clear plan','A brand strategy first, then a content plan that follows it.']],
+  cap:'<p><b>trovemedia.official</b> Be honest. Pick one, and we\'ll tell you how we\'d fix it.</p>'},
+ {type:'carousel',art:'<div class="art"><div class="k">02 · For brands</div><div class="h">The right creators. <em>Managed.</em></div><div class="s">Swipe for how a collab runs.</div>'+foot('Creator collaborations')+'</div>',
+  slides:['<div class="art cream"><div class="k">How a collab runs</div><div class="list" style="margin-top:auto"><div>01 · Search and shortlist</div><div>02 · Outreach and negotiation</div><div>03 · Brief and coordination</div><div>04 · Content approved and live</div></div>'+foot('2 / 3')+'</div>',
+          '<div class="art gold"><div class="k">Our rule</div><div class="h">Fit first. <em>Numbers second.</em></div><div class="s">A creator your audience trusts beats a big follower count.</div>'+foot('3 / 3')+'</div>'],
+  cap:'<p><b>trovemedia.official</b> Creator collaborations. The right creators for your brand, found, briefed and managed until the content is live.</p>'},
+ {type:'carousel',art:'<div class="art cream"><div class="k">03 · For creators</div><div class="h">You create. <em>We handle the rest.</em></div><div class="s">Swipe for what we manage for creators.</div>'+foot('Talent management')+'</div>',
+  slides:['<div class="art"><div class="k">The business side, handled</div><div class="list" style="margin-top:auto"><div>Brand outreach: we pitch you to brands that fit</div><div>Negotiation: rates, usage rights and timelines</div><div>Contracts, briefs and deliverables</div><div>Deals that already come to you, managed properly</div></div>'+foot('2 / 4')+'</div>',
+          '<div class="art gold"><div class="k">Your content, sharper</div><div class="list" style="margin-top:auto"><div>Content ideas and hooks</div><div>Posting strategy</div><div>Profile and growth direction</div><div>Brand-ready content, without losing your voice</div></div>'+foot('3 / 4')+'</div>',
+          '<div class="art cream"><div class="k">How it works</div><div class="list" style="margin-top:auto"><div>01 · A short call about your content and goals</div><div>02 · A plan for your page and the brands that fit</div><div>03 · We pitch, negotiate and manage</div><div>04 · You create</div></div>'+foot('4 / 4')+'</div>'],
+  cap:'<p><b>trovemedia.official</b> Talent management. For creators who want the right brand deals and a clear direction for their page.</p><ul><li>Brand outreach: we pitch you to brands that fit your content</li><li>Negotiation: rates, usage rights and timelines</li><li>Contracts, briefs and deliverables, handled end to end</li><li>Deals that already come to you, managed properly</li><li>Content ideas, hooks and posting strategy</li><li>Profile and growth direction</li></ul><p>You focus on creating. We manage the rest.</p>'},
+ {type:'lock',art:'<div class="art gold lockd"><div class="k">Close friends</div><div class="h" style="font-size:11cqw">Our clients</div><div class="blur" style="margin-top:4cqw">'+CLIENTS+'</div>'+foot('Close friends only')+'</div>',
+  cap:'<p><b>trovemedia.official</b> Our client work stays private. Unlock the post to see who we\'ve worked with. The full story is shared on a call.</p>'},
+ {type:'carousel',art:'<div class="art"><div class="k">04 · New brands</div><div class="h">Starting a brand? <em>Start here.</em></div><div class="s">Swipe for how we launch.</div>'+foot('Brand strategy')+'</div>',
+  slides:['<div class="art cream"><div class="k">Brand strategy</div><div class="list" style="margin-top:auto"><div>Positioning: who you are and who it\'s for</div><div>Voice and content direction</div><div>Instagram launch plan</div><div>The first months of content</div></div>'+foot('2 / 3')+'</div>',
+          '<div class="art gold"><div class="k">The rest of the launch</div><div class="h">Website, design, shoots. <em>Covered.</em></div><div class="s">Handled with trusted partners, managed by us.</div>'+foot('3 / 3')+'</div>'],
+  cap:'<p><b>trovemedia.official</b> Starting a brand? We build the strategy first: positioning, voice and a launch plan. Websites, design and shoots are handled with our partners, and we manage it all for you.</p>'},
+ {type:'cal',art:'<div class="art"><div class="k">A month, planned</div><div class="h" style="font-size:10cqw">Nothing goes out without a plan.</div><div class="s">Open the calendar.</div>'+foot('Content calendar')+'</div>',
+  cap:'<p><b>trovemedia.official</b> This is what a planned month looks like. Tap a day to see what goes out.</p><p class="tm">Example calendar. Every brand gets its own.</p>'},
+ {type:'link',href:'contact.html',art:'<div class="art gold"><div class="k">Start here</div><div class="h">Your brand, <em>next.</em></div><div class="s">Tap to message us. A few taps, straight to us.</div>'+foot('Work with us')+'</div>'}
+];
+var REELS=[
+ {type:'single',art:'<div class="art gold"><div class="k">Service 01</div><div class="h">Social media management</div><div class="list"><div>Strategy &amp; calendar</div><div>Reels, carousels, stories</div><div>Writing &amp; captions</div></div>'+foot('For brands')+'</div>',cap:POSTS[1].cap},
+ {type:'single',art:'<div class="art"><div class="k">Service 02</div><div class="h">Creator collabs</div><div class="list"><div>Search &amp; shortlist</div><div>Outreach &amp; negotiation</div><div>Briefs to final post</div></div>'+foot('For brands')+'</div>',cap:POSTS[3].cap},
+ {type:'single',art:'<div class="art cream"><div class="k">Service 03</div><div class="h">Talent management</div><div class="list"><div>Brand outreach &amp; deals</div><div>Negotiation &amp; contracts</div><div>Content strategy &amp; growth</div></div>'+foot('For creators')+'</div>',cap:POSTS[4].cap},
+ {type:'single',art:'<div class="art"><div class="k">Service 04</div><div class="h">Brand strategy</div><div class="list"><div>Positioning &amp; voice</div><div>Launch plan</div><div>Partners for the rest</div></div>'+foot('For new brands')+'</div>',cap:POSTS[6].cap}
+];
+var TAGGED=[
+ {type:'single',art:'<div class="art"><div class="k">Influencer collaborations</div><div class="h">House of <em>Misfit</em></div>'+foot('Full story on a call')+'</div>',cap:'<p><b>House of Misfit</b> · Influencer collaborations</p><p>Creators who matched the brand\'s attitude: found, reached and managed through to live content.</p><p class="tm">Campaign details are private. The full story is shared on a call.</p>'},
+ {type:'single',art:'<div class="art gold"><div class="k">Influencer collaborations</div><div class="h">3Era <em>Media</em></div>'+foot('Full story on a call')+'</div>',cap:'<p><b>3Era Media</b> · Influencer collaborations</p><p>Outreach, briefs and partnerships that felt natural to every creator\'s audience.</p><p class="tm">Campaign details are private. The full story is shared on a call.</p>'},
+ {type:'single',art:'<div class="art cream"><div class="k">Content strategy &amp; content</div><div class="h">Top<em>klickz</em></div>'+foot('Full story on a call')+'</div>',cap:'<p><b>Topklickz</b> · Content strategy and content</p><p>The strategy and the content itself: what to post, why, and how it should sound.</p><p class="tm">Details are private. The full story is shared on a call.</p>'}
+];
+var SETS={posts:POSTS,reels:REELS,tagged:TAGGED};
+var BADGE={carousel:'car',poll:'poll',reveal:'eye',lock:'lock',cal:'cal'};
+Object.keys(SETS).forEach(function(k){
+  var g=document.getElementById('g-'+k);
+  SETS[k].forEach(function(p,i){
+    var t=document.createElement(p.type==='link'?'a':'button');t.className='tile';
+    if(p.type==='link')t.href=p.href;else{t.setAttribute('aria-label','Open post');t.onclick=function(){openPost(k,i);};}
+    t.innerHTML=p.art+(k==='reels'?IC.reel:(BADGE[p.type]?IC[BADGE[p.type]]:''))+'<span class="ov">'+(p.type==='link'?'Message us':'View')+'</span>';
+    g.appendChild(t);
+  });
+});
+/* ---------- tabs ---------- */
+function tab(k){document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t.dataset.tab===k);});Object.keys(SETS).forEach(function(x){document.getElementById('g-'+x).classList.toggle('hide',x!==k);});}
+document.querySelectorAll('[data-tab]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();tab(a.dataset.tab);var t=document.querySelector('.tabs');window.scrollTo({top:t.getBoundingClientRect().top+scrollY-70,behavior:'smooth'});});});
+/* ---------- post modal ---------- */
+var md=document.getElementById('md'),pic=document.getElementById('mpic'),cap=document.getElementById('mcap'),cs=null,ci=0;
+function render(p){
+  pic.className='pic'+(cs==='reels'?' r':'');
+  if(p.type==='carousel'){
+    var all=[p.art].concat(p.slides),n=0;
+    pic.innerHTML='<div class="track">'+all.map(function(a){return '<div class="sl">'+a+'</div>';}).join('')+'</div><button class="pa l">‹</button><button class="pa r">›</button><div class="pdots">'+all.map(function(_,i){return '<i'+(i?'':' class="on"')+'></i>';}).join('')+'</div>';
+    var tr=pic.querySelector('.track'),ds=pic.querySelectorAll('.pdots i');
+    function go(x){n=Math.max(0,Math.min(all.length-1,x));tr.style.transform='translateX(-'+n*100+'%)';ds.forEach(function(d,j){d.classList.toggle('on',j===n);});pic.querySelector('.pa.l').style.visibility=n?'visible':'hidden';pic.querySelector('.pa.r').style.visibility=n<all.length-1?'visible':'hidden';}
+    pic.querySelector('.pa.l').onclick=function(){go(n-1);};pic.querySelector('.pa.r').onclick=function(){go(n+1);};
+    var sx=null;pic.ontouchstart=function(e){sx=e.touches[0].clientX;};pic.ontouchend=function(e){if(sx==null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(n+(dx<0?1:-1));sx=null;};
+    go(0);
+  } else if(p.type==='poll'){
+    pic.innerHTML='<div class="art"><div class="k">Quick poll</div><div class="h" style="font-size:9cqw;margin-top:auto">'+p.q+'</div><div>'+p.opts.map(function(o,i){return '<button class="opt" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div><div class="pollres" id="pr"></div></div>';
+    pic.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){pic.querySelectorAll('.opt').forEach(function(x){x.classList.remove('pick');});b.classList.add('pick');document.getElementById('pr').innerHTML=p.opts[+b.dataset.i][1]+'<br><a href="contact.html">Fix it with us →</a>';};});
+  } else if(p.type==='reveal'){
+    pic.innerHTML='<div class="art">'+p.pre+'<button class="holdbtn" id="hb"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48"/></svg>Hold</button>'+p.rev+'</div>';
+    var hb=document.getElementById('hb'),c=hb.querySelector('circle'),art=pic.querySelector('.art'),raf,st;
+    function down(e){e.preventDefault();st=performance.now();(function f(now){var k=Math.min(1,(now-st)/1100);c.style.strokeDashoffset=302*(1-k);if(k<1)raf=requestAnimationFrame(f);else art.classList.add('done');})(st);}
+    function up(){cancelAnimationFrame(raf);if(!art.classList.contains('done'))c.style.strokeDashoffset=302;}
+    hb.addEventListener('pointerdown',down);['pointerup','pointerleave','pointercancel'].forEach(function(ev){hb.addEventListener(ev,up);});
+  } else if(p.type==='lock'){
+    pic.innerHTML='<div class="art gold lockd"><div class="k">Close friends</div><div class="h" style="font-size:11cqw">Our clients</div><div style="margin-top:4cqw">'+CLIENTS+'</div><button class="unlock" id="ul">Unlock · Close friends</button>'+foot('Full story on a call')+'</div>';
+    document.getElementById('ul').onclick=function(){pic.querySelector('.art').classList.remove('lockd');};
+  } else if(p.type==='cal'){
+    var plan={2:['r','Reel · brand story'],4:['c','Carousel · how it\'s made'],5:['s','Stories · behind the scenes'],8:['r','Reel · trend, in your voice'],10:['c','Carousel · customer favourites'],12:['s','Stories · Q&A'],15:['r','Reel · creator collab'],17:['c','Carousel · product guide'],19:['s','Stories · poll'],22:['r','Reel · founder moment'],24:['c','Carousel · the month in review'],26:['s','Stories · countdown'],29:['r','Reel · launch teaser']};
+    var h='<div class="art"><div class="k">A month, planned</div><div class="cal">'+['M','T','W','T','F','S','S'].map(function(d){return '<span>'+d+'</span>';}).join('');
+    for(var d=1;d<=30;d++){var x=plan[d];h+='<button data-d="'+d+'">'+d+(x?'<i class="i-'+x[0]+'"></i>':'')+'</button>';}
+    h+='</div><div class="legend"><span><i class="i-r"></i>Reel</span><span><i class="i-c"></i>Carousel</span><span><i class="i-s"></i>Stories</span></div><div class="calout" id="co">Tap a day.</div></div>';
+    pic.innerHTML=h;
+    pic.querySelectorAll('.cal button').forEach(function(b){b.onclick=function(){pic.querySelectorAll('.cal button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');var x=plan[b.dataset.d];document.getElementById('co').textContent='Day '+b.dataset.d+': '+(x?x[1]:'Community, replies and planning.');};});
+  } else pic.innerHTML=p.art;
+  cap.innerHTML='<div class="row"><span class="mini">'+LOGO+'</span><div>'+(p.cap||'')+'</div></div><div id="cms"></div>';
+  social();
+}
+/* ---------- likes & comments (saved on the visitor's own device) ---------- */
+var DB={l:{},c:{}};try{DB=JSON.parse(localStorage.getItem('trove-social'))||DB;}catch(e){}
+function save(){try{localStorage.setItem('trove-social',JSON.stringify(DB));}catch(e){}}
+function key(){return cs+':'+ci;}
+function esc(t){return t.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function ago(t){var m=Math.floor((Date.now()-t)/60000);return m<1?'now':m<60?m+'m':m<1440?Math.floor(m/60)+'h':Math.floor(m/1440)+'d';}
+var lkb=document.getElementById('lkb'),lkl=document.getElementById('lkl'),cmf=document.getElementById('cmf'),cmi=document.getElementById('cmi');
+function social(){
+  var on=!!DB.l[key()];lkb.classList.toggle('on',on);
+  lkl.className='lkl'+(on?'':' n');lkl.textContent=on?'Liked by you':'Double-tap the post to like it';
+  var list=DB.c[key()]||[];
+  document.getElementById('cms').innerHTML=list.map(function(c,i){return '<div class="cm"><span class="ua">Y</span><div><b>you</b> '+esc(c.t)+'<div class="tm">'+ago(c.at)+'<button data-del="'+i+'">Delete</button></div></div></div>';}).join('');
+  cap.querySelectorAll('[data-del]').forEach(function(b){b.onclick=function(){list.splice(+b.dataset.del,1);DB.c[key()]=list;save();social();};});
+}
+function like(force){var k=key();DB.l[k]=force?1:(DB.l[k]?0:1);if(!DB.l[k])delete DB.l[k];save();social();}
+lkb.onclick=function(){like(false);};
+document.getElementById('cmb').onclick=function(){cmi.focus();};
+function addC(t){t=t.trim();if(!t)return;var k=key();(DB.c[k]=DB.c[k]||[]).push({t:t,at:Date.now()});save();social();cmi.value='';cmf.classList.remove('ok');var l=cap.querySelector('.cm:last-child');if(l)l.scrollIntoView({block:'nearest',behavior:'smooth'});}
+cmi.oninput=function(){cmf.classList.toggle('ok',!!cmi.value.trim());};
+cmf.onsubmit=function(e){e.preventDefault();addC(cmi.value);cmi.blur();};
+document.getElementById('emo').innerHTML=['❤️','🙌','🔥','👏','😍','😮','😂','💯'].map(function(x){return '<button type="button">'+x+'</button>';}).join('');
+document.querySelectorAll('#emo button').forEach(function(b){b.onclick=function(){addC(b.textContent);};});
+/* double-tap to like */
+var HEART='<svg class="bigh" viewBox="0 0 24 24"><path d="M12 20.5s-8-4.9-8-11A4.5 4.5 0 0 1 12 6.6 4.5 4.5 0 0 1 20 9.5c0 6.1-8 11-8 11z"/></svg>';
+function burst(){var h=pic.querySelector('.bigh');if(!h){pic.insertAdjacentHTML('beforeend',HEART);h=pic.querySelector('.bigh');}h.classList.remove('go');void h.offsetWidth;h.classList.add('go');like(true);}
+var lastTap=0,tx=0,ty=0;
+pic.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+pic.addEventListener('touchend',function(e){if(e.target.closest('button,a'))return;var t=e.changedTouches[0];if(Math.abs(t.clientX-tx)>12||Math.abs(t.clientY-ty)>12)return;var now=Date.now();if(now-lastTap<320){e.preventDefault();burst();lastTap=0;}else lastTap=now;});
+pic.addEventListener('dblclick',function(e){if(e.target.closest('button,a'))return;burst();});
+function openable(k){return SETS[k].map(function(p,i){return p.type==='link'?null:i;}).filter(function(x){return x!==null;});}
+function openPost(k,i){cs=k;ci=i;render(SETS[k][i]);md.classList.add('on');document.body.style.overflow='hidden';}
+function step(dir){var o=openable(cs),j=o.indexOf(ci);openPost(cs,o[(j+dir+o.length)%o.length]);}
+function closePost(){md.classList.remove('on');document.body.style.overflow='';}
+document.getElementById('mx').onclick=closePost;
+document.getElementById('mb').onclick=closePost;
+md.addEventListener('click',function(e){if(e.target===md)closePost();});
+document.getElementById('mn').onclick=function(){step(1);};
+document.getElementById('mp').onclick=function(){step(-1);};
+/* ---------- stories ---------- */
+var S={
+ brands:{t:'Brands',s:[{k:'For brands',h:'We grow your brand, <em>and build a culture around it.</em>'},{k:'Strategy first',h:'Every month starts with <em>a plan.</em>',ul:['What to post, and why','Content pillars & formats','Trends that fit your voice']},{k:'Social media management',h:'Your page, run like a brand.',ul:['Monthly strategy & calendar','Reels, concept to final cut','Carousels, statics & stories','Content writing & captions']},{k:'Creator collaborations',h:'The right creators. <em>Managed.</em>',ul:['Search & shortlist','Outreach & negotiation','Briefs to final post']},{k:'Next',h:'Your brand, <em>next.</em>',go:'Work with us'}]},
+ newbrand:{t:'New brand',s:[{k:'Starting a brand?',h:'Start with a <em>strategy.</em>',p:'Before the first post, we work out who you are and who it is for.'},{k:'Brand strategy',h:'The foundation.',ul:['Positioning','Voice & content direction','Instagram launch plan','The first months of content']},{k:'The rest of the launch',h:'Website, design, shoots. <em>Covered.</em>',p:'Handled with trusted partners, managed by us.'},{k:'Next',h:'Launch it <em>right.</em>',go:'Tell us about it'}]},
+ creators:{t:'Creators',s:[{k:'For creators',h:'You create. <em>We handle the rest.</em>'},{k:'What we manage',h:'The business side.',ul:['Brand outreach & pitching','Negotiation: rates, usage, timelines','Contracts, briefs & deliverables','Deals that already come to you']},{k:'Your content, sharper',h:'Strategy for <em>your page.</em>',ul:['Content ideas & hooks','Posting strategy','Profile & growth direction']},{k:'Next',h:'Let us handle <em>the deals.</em>',go:'Talk to us'}]},
+ work:{t:'Clients',cf:true,s:[{k:'Close friends',h:'Our client work stays <em>between us.</em>',p:'Here is who we have worked with.'},{k:'Influencer collaborations',h:'House of <em>Misfit</em>'},{k:'Influencer collaborations',h:'3Era <em>Media</em>'},{k:'Content strategy & content',h:'Top<em>klickz</em>'},{k:'The full story',h:'Shared on a <em>call.</em>',go:'Book a call'}]},
+ process:{t:'Process',s:[{k:'01',h:'Call.',p:'We understand your brand and where you want to take it.'},{k:'02',h:'Proposal.',p:'A clear monthly plan: content mix, creators, deliverables.'},{k:'03',h:'Create.',p:'We plan, write and produce. You approve.'},{k:'04',h:'Grow.',p:'A monthly review and a sharper plan for next month.',go:'Start a project'}]}
+};
+var sv=document.getElementById('sv'),sb=document.getElementById('sb'),bars=document.getElementById('bars'),sk=null,si=0,t0=0,paused=false,pa=0,DUR=5000;
+function rend(){var s=S[sk].s[si];sb.innerHTML='<div class="k">'+s.k+'</div><h3 class="h">'+s.h+'</h3>'+(s.p?'<p>'+s.p+'</p>':'')+(s.ul?'<ul>'+s.ul.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>':'')+(s.go?'<a class="b p go" href="contact.html">'+s.go+'</a>':'');bars.querySelectorAll('b').forEach(function(b,k){b.style.width=k<si?'100%':'0';});t0=performance.now();}
+function openS(k){sk=k;si=0;bars.innerHTML=S[k].s.map(function(){return '<i><b></b></i>';}).join('');document.getElementById('stt').textContent=S[k].t;document.getElementById('cfb').hidden=!S[k].cf;sv.classList.add('on');document.body.style.overflow='hidden';rend();}
+function closeS(){sv.classList.remove('on');document.body.style.overflow='';sk=null;}
+function nx(){if(!sk)return;if(si<S[sk].s.length-1){si++;rend();}else closeS();}
+function pv(){if(!sk)return;if(si>0){si--;rend();}else t0=performance.now();}
+(function loop(now){if(sk&&!paused){var p=Math.min(1,(now-t0)/DUR),b=bars.querySelectorAll('b')[si];if(b)b.style.width=p*100+'%';if(p>=1)nx();}requestAnimationFrame(loop);})(0);
+document.querySelectorAll('[data-story]').forEach(function(b){b.onclick=function(){openS(b.dataset.story);};});
+document.getElementById('sx').onclick=closeS;document.getElementById('tr').onclick=nx;document.getElementById('tl').onclick=pv;
+document.getElementById('sn').onclick=nx;document.getElementById('sp').onclick=pv;
+var st=document.getElementById('st');
+st.addEventListener('pointerdown',function(e){if(e.target.closest('a,button'))return;paused=true;pa=performance.now();});
+['pointerup','pointerleave'].forEach(function(ev){st.addEventListener(ev,function(){if(paused){paused=false;t0+=performance.now()-pa;}});});
+document.addEventListener('keydown',function(e){if(sv.classList.contains('on')){if(e.key==='Escape')closeS();if(e.key==='ArrowRight')nx();if(e.key==='ArrowLeft')pv();}else if(md.classList.contains('on')&&document.activeElement!==cmi){if(e.key==='Escape')closePost();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);}});
+var h=location.hash.replace('#','');if(SETS[h])tab(h);
+})();
+</script>
+</body>
+</html>
